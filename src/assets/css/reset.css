@@ -98,7 +98,8 @@ body,
   height: 100%;
   overflow: hidden;
   font-size: 14px;
-  font-family: "PingFangSC-Regular", "PingFang SC", "PingFang HK", "微软雅黑", "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+  font-family: 'PingFangSC-Regular', 'PingFang SC', 'PingFang HK', '微软雅黑',
+    'Helvetica Neue', Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
   background: #fafafa;
   color: #000;
 }
@@ -111,6 +112,10 @@ img {
 
 a {
   text-decoration: none;
+}
+
+ul li {
+  list-style: none;
 }
 
 table {
@@ -153,7 +158,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -161,4 +166,24 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.gray-color {
+  color: #aaa;
+}
+
+.marginTop10 {
+  margin-top: 10px;
+}
+
+.marginLeft15 {
+  margin-left: 15px;
+}
+
+.padding20 {
+  padding: 20px;
+}
+
+.ghostClass {
+  border: 1px dashed #2589ff;
 }

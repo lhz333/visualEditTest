@@ -7,20 +7,24 @@ import {
   Button,
   Select,
   Container,
-  Header,
   Aside,
   Main,
-  Footer
+  Footer,
+  Tabs,
+  TabPane,
+  Image
 } from "element-ui";
 
 Vue.prototype.$ELEMENT = { size: "small" };
 Vue.use(Button);
 Vue.use(Select);
 Vue.use(Container);
-Vue.use(Header);
 Vue.use(Aside);
 Vue.use(Main);
 Vue.use(Footer);
+Vue.use(Tabs);
+Vue.use(TabPane);
+Vue.use(Image);
 
 Vue.config.productionTip = false;
 

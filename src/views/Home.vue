@@ -6,7 +6,9 @@
         <el-aside width="400px">
           <component-list></component-list>
         </el-aside>
-        <el-main>内容区域</el-main>
+        <el-main>
+          <page-area></page-area>
+        </el-main>
         <el-aside width="400px">属性列表区域</el-aside>
       </el-container>
       <el-footer class="flex-center">
@@ -21,6 +23,7 @@
 //import from ''
 import Header from "@/components/Header.vue";
 import ComponentList from "@/components/ComponentList.vue";
+import PageArea from "@/components/PageArea.vue";
 export default {
   name: "",
   //实例的数据对象
@@ -29,7 +32,8 @@ export default {
   },
   components: {
     Header,
-    ComponentList
+    ComponentList,
+    PageArea
   },
   //数组或对象，用于接收来自父组件的数据
   props: {},
@@ -55,15 +59,7 @@ export default {
   height: 100% !important;
 }
 
-.el-aside {
-  background-color: #d3dce6;
-  color: #333;
-  text-align: center;
-}
-
 .el-main {
   background-color: #e9eef3;
-  color: #333;
-  text-align: center;
 }
 </style>

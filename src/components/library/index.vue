@@ -1,20 +1,26 @@
 <template>
-  <div class="header">
-    <p>demo练习</p>
+  <div class="">
+    <test-swiper v-if="item.type === 'swiper'"></test-swiper>
   </div>
 </template>
 <script>
 //import from ''
-
+import TestSwiper from "./test-swiper";
 export default {
   name: "",
   //实例的数据对象
   data() {
     return {};
   },
-  components: {},
+  components: {
+    TestSwiper
+  },
   //数组或对象，用于接收来自父组件的数据
-  props: {},
+  props: {
+    item: {
+      type: Object
+    }
+  },
   //计算
   computed: {},
   //方法
@@ -28,15 +34,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-.header {
-  position: relative;
-  width: 100%;
-  height: 70px;
-  line-height: 70px;
-  font-size: 22px;
-  color: #fff;
-  box-sizing: border-box;
-  background-color: #242f42;
-}
-</style>
+<style lang="less" scoped></style>

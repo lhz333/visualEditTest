@@ -21,8 +21,8 @@ export default {
       ]
     },
     {
-      type: "test",
-      name: "测试"
+      type: "txt",
+      name: "文本"
     }
   ]
 };

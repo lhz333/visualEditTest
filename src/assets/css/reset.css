@@ -185,5 +185,28 @@ input[type='number'] {
 }
 
 .ghostClass {
+  background: #fff;
   border: 1px dashed #2589ff;
+}
+.ghostClass::after {
+  background: #fff;
+}
+
+.ghostClass {
+  position: relative;
+  line-height: 20px;
+  list-style: none;
+  font-size: 0;
+}
+.ghostClass::after {
+  content: '放到这里';
+  display: block;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #999;
+  z-index: 10;
 }

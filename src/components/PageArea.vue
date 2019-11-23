@@ -1,7 +1,7 @@
 <template>
   <div class="page-area">
     <draggable
-      v-model="pageModulesList"
+      v-model="pageModulesList.list"
       class="modules-list"
       :group="{ name: 'module', put: true }"
       tag="div"
@@ -9,7 +9,7 @@
       :animation="100"
       @add="handleModulesAdd"
     >
-      <div v-for="(item, index) in pageModulesList" :key="index">
+      <div v-for="(item, index) in pageModulesList.list" :key="index">
         <module-library :item="item"></module-library>
       </div>
     </draggable>
@@ -61,6 +61,26 @@ export default {
   overflow-y: auto;
   .modules-list {
     height: 100%;
+  }
+
+  .ghostClass {
+    position: relative;
+    line-height: 30px;
+    list-style: none;
+    font-size: 0;
+
+    &::after {
+      content: '放到这里';
+      display: block;
+      background: #fff;
+      position: absolute;
+      left: 50%;
+      margin-left: -32px;
+      top: 0;
+      font-size: 16px;
+      color: #999;
+      z-index: 10;
+    }
   }
 }
 </style>

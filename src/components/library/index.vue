@@ -1,11 +1,14 @@
 <template>
   <div class="">
     <test-swiper v-if="item.type === 'swiper'"></test-swiper>
+
+    <test-txt v-if="item.type === 'txt'"></test-txt>
   </div>
 </template>
 <script>
 //import from ''
 import TestSwiper from "./test-swiper";
+import TestTxt from './test-txt'
 export default {
   name: "",
   //实例的数据对象
@@ -13,7 +16,8 @@ export default {
     return {};
   },
   components: {
-    TestSwiper
+    TestSwiper,
+    TestTxt
   },
   //数组或对象，用于接收来自父组件的数据
   props: {

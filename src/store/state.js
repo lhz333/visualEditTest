@@ -1,5 +1,7 @@
 const state = {
-  pageModules: []
+  pageModules: {
+    list: []
+  }
 };
 
 export default state;

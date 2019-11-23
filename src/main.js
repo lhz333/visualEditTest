@@ -12,7 +12,9 @@ import {
   Footer,
   Tabs,
   TabPane,
-  Image
+  Image,
+  Carousel,
+  CarouselItem,
 } from "element-ui";
 
 Vue.prototype.$ELEMENT = { size: "small" };
@@ -25,6 +27,8 @@ Vue.use(Footer);
 Vue.use(Tabs);
 Vue.use(TabPane);
 Vue.use(Image);
+Vue.use(Carousel);
+Vue.use(CarouselItem);
 
 Vue.config.productionTip = false;
 

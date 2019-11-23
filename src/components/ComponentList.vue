@@ -71,28 +71,26 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.component-list {
-  .draggable-area {
-    ul {
-      width: 100%;
-      li {
-        float: left;
-        width: 29.33%;
-        height: 85px;
-        border: 1px solid #e3e2e5;
-        padding: 5px;
-        margin: 10px 2%;
-        border-radius: 4px;
-        text-align: center;
-        background-color: #ffffff;
-        cursor: move;
-        .el-image {
-          width: 80%;
-          height: 50px;
-        }
-        &:hover {
-          border-color: #2589ff;
-        }
+.draggable-area {
+  ul {
+    width: 100%;
+    li {
+      float: left;
+      width: 29.33%;
+      height: 85px;
+      border: 1px solid #e3e2e5;
+      padding: 5px;
+      margin: 10px 2%;
+      border-radius: 4px;
+      text-align: center;
+      background-color: #ffffff;
+      cursor: move;
+      .el-image {
+        width: 80%;
+        height: 50px;
+      }
+      &:hover {
+        border-color: #2589ff;
       }
     }
   }

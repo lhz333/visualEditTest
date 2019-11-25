@@ -12,15 +12,20 @@
         <el-aside width="400px">属性列表区域</el-aside>
       </el-container>
       <el-footer class="flex-center">
-        <el-button type="primary" icon="el-icon-refresh">重置</el-button>
+        <el-button type="primary" icon="el-icon-refresh" @click="handleReset"
+          >重置</el-button
+        >
         <el-button type="primary" icon="el-icon-view">预览</el-button>
-        <el-button type="primary" icon="el-icon-document">保存</el-button>
+        <el-button type="primary" icon="el-icon-document" @click="handleSave"
+          >保存</el-button
+        >
       </el-footer>
     </el-container>
   </div>
 </template>
 <script>
 //import from ''
+import { mapState, mapActions } from "vuex";
 import Header from "@/components/Header.vue";
 import ComponentList from "@/components/ComponentList.vue";
 import PageArea from "@/components/PageArea.vue";
@@ -38,9 +43,21 @@ export default {
   //数组或对象，用于接收来自父组件的数据
   props: {},
   //计算
-  computed: {},
+  computed: {
+    ...mapState({
+      pageModules: "pageModules"
+    })
+  },
   //方法
-  methods: {},
+  methods: {
+    ...mapActions(["setPageModules"]),
+    //重置
+    handleReset() {},
+    //保存
+    handleSave() {
+      this.setPageModules(this.pageModules);
+    }
+  },
   //生命周期函数
   created() {},
   beforeMount() {},
@@ -61,5 +78,13 @@ export default {
 
 .el-main {
   background-color: #e9eef3;
+}
+.el-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 9999;
 }
 </style>

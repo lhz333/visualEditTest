@@ -9,9 +9,9 @@
       :animation="100"
       @add="handleModulesAdd"
     >
-      <div v-for="(item, index) in pageModulesList.list" :key="index">
-        <module-library :item="item"></module-library>
-      </div>
+      <template v-for="(item, index) in pageModulesList.list">
+        <module-library :key="index" :item="item"></module-library>
+      </template>
     </draggable>
   </div>
 </template>
@@ -61,26 +61,6 @@ export default {
   overflow-y: auto;
   .modules-list {
     height: 100%;
-  }
-
-  .ghostClass {
-    position: relative;
-    line-height: 30px;
-    list-style: none;
-    font-size: 0;
-
-    &::after {
-      content: '放到这里';
-      display: block;
-      background: #fff;
-      position: absolute;
-      left: 50%;
-      margin-left: -32px;
-      top: 0;
-      font-size: 16px;
-      color: #999;
-      z-index: 10;
-    }
   }
 }
 </style>

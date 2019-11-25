@@ -1,5 +1,9 @@
 <template>
-  <div class="">
+  <div class="library-list">
+    <div class="action">
+      <p>{{ item.name }}</p>
+      <el-button type="text" icon="el-icon-delete" @click="handleDelete(item)">删除</el-button>
+    </div>
     <test-swiper v-if="item.type === 'swiper'"></test-swiper>
 
     <test-txt v-if="item.type === 'txt'"></test-txt>
@@ -7,12 +11,13 @@
 </template>
 <script>
 //import from ''
+import { mapState } from "vuex";
 import TestSwiper from "./test-swiper";
-import TestTxt from './test-txt'
+import TestTxt from "./test-txt";
 export default {
   name: "",
   //实例的数据对象
-  data() {
+  data () {
     return {};
   },
   components: {
@@ -26,16 +31,49 @@ export default {
     }
   },
   //计算
-  computed: {},
+  computed: {
+    ...mapState({
+      pageModulesList: "pageModules"
+    })
+  },
   //方法
-  methods: {},
+  methods: {
+    handleDelete (data) {
+      this.pageModulesList.list.splice(this.pageModulesList.list.findIndex(item => item.key === data.key), 1)
+    }
+  },
   //生命周期函数
-  created() {},
-  beforeMount() {},
-  mounted() {},
+  created () { },
+  beforeMount () { },
+  mounted () { },
   //监听
   watch: {}
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.library-list {
+  position: relative;
+  border: 1px solid transparent;
+  cursor: pointer;
+  .action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: #2589ff;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  &:hover {
+    border-color: #2589ff;
+    .action {
+      display: flex;
+    }
+  }
+}
+</style>

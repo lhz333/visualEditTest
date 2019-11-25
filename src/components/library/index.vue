@@ -1,5 +1,7 @@
 <template>
-  <div class="library-list">
+  <div class="library-list" 
+    @click="handleSelected"
+    :class="{ active: selectedModules.key === item.key }">
     <div class="action">
       <p>{{ item.name }}</p>
       <el-button type="text" icon="el-icon-delete" @click="handleDelete(item)">删除</el-button>
@@ -11,7 +13,7 @@
 </template>
 <script>
 //import from ''
-import { mapState } from "vuex";
+import { mapState, mapGetters, mapActions } from "vuex";
 import TestSwiper from "./test-swiper";
 import TestTxt from "./test-txt";
 export default {
@@ -34,12 +36,17 @@ export default {
   computed: {
     ...mapState({
       pageModulesList: "pageModules"
-    })
+    }),
+    ...mapGetters(["selectedModules"])
   },
   //方法
   methods: {
+    ...mapActions(["changeSelectedModules"]),
     handleDelete (data) {
       this.pageModulesList.list.splice(this.pageModulesList.list.findIndex(item => item.key === data.key), 1)
+    },
+    handleSelected (data) {
+      this.changeSelectedModules(data);
     }
   },
   //生命周期函数

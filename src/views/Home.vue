@@ -3,7 +3,7 @@
     <Header />
     <el-container>
       <el-container>
-        <el-aside width="400px">
+        <el-aside width="25%">
           <!-- 组件列表 -->
           <component-list></component-list>
         </el-aside>
@@ -11,15 +11,19 @@
           <!-- 页面可配置区域 -->
           <page-area></page-area>
         </el-main>
-        <el-aside width="400px">
+        <el-aside width="25%">
           <!-- 组件属性设置 -->
           <component-settings></component-settings>
         </el-aside>
       </el-container>
       <el-footer class="flex-center">
-        <el-button type="primary" icon="el-icon-refresh" @click="handleReset">重置</el-button>
+        <el-button type="primary" icon="el-icon-refresh" @click="handleReset"
+          >重置</el-button
+        >
         <el-button type="primary" icon="el-icon-view">预览</el-button>
-        <el-button type="primary" icon="el-icon-document" @click="handleSave">保存</el-button>
+        <el-button type="primary" icon="el-icon-document" @click="handleSave"
+          >保存</el-button
+        >
       </el-footer>
     </el-container>
   </div>
@@ -34,7 +38,7 @@ import ComponentSettings from "@/components/componentSettings";
 export default {
   name: "",
   //实例的数据对象
-  data () {
+  data() {
     return {};
   },
   components: {
@@ -55,16 +59,16 @@ export default {
   methods: {
     ...mapActions(["setPageModules"]),
     //重置
-    handleReset () { },
+    handleReset() {},
     //保存
-    handleSave () {
+    handleSave() {
       this.setPageModules(this.pageModules);
     }
   },
   //生命周期函数
-  created () { },
-  beforeMount () { },
-  mounted () { },
+  created() {},
+  beforeMount() {},
+  mounted() {},
   //监听
   watch: {}
 };

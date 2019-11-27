@@ -2,6 +2,7 @@ export default {
   componentsList: [
     {
       type: "swiper",
+      configType: "swiper",
       name: "轮播",
       title: "名称",
       fontSize: 14,
@@ -22,6 +23,7 @@ export default {
     },
     {
       type: "txt",
+      configType: "txt",
       name: "文本"
     }
   ]

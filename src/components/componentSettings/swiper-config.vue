@@ -1,6 +1,6 @@
 <template>
-  <div class="header">
-    <p>demo练习</p>
+  <div class="swiper-config">
+    <p>轮播属性</p>
   </div>
 </template>
 <script>
@@ -28,16 +28,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-.header {
-  position: relative;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  font-size: 22px;
-  color: #fff;
-  text-align: center;
-  box-sizing: border-box;
-  background-color: #242f42;
-}
-</style>
+<style lang="less" scoped></style>

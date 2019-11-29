@@ -20,7 +20,6 @@
         <el-button type="primary" icon="el-icon-refresh" @click="handleReset"
           >重置</el-button
         >
-        <el-button type="primary" icon="el-icon-view">预览</el-button>
         <el-button type="primary" icon="el-icon-document" @click="handleSave"
           >保存</el-button
         >
@@ -39,7 +38,12 @@ export default {
   name: "",
   //实例的数据对象
   data() {
-    return {};
+    return {
+      resetPageModules: {
+        list: []
+      },
+      resetSelectedModules: {}
+    };
   },
   components: {
     Header,
@@ -52,23 +56,37 @@ export default {
   //计算
   computed: {
     ...mapState({
-      pageModules: "pageModules"
+      pageModules: "pageModules",
+      selectedModules: "selectedModules"
     })
   },
   //方法
   methods: {
-    ...mapActions(["setPageModules"]),
+    ...mapActions(["setPageModules", "changeSelectedModules"]),
     //重置
-    handleReset() {},
+    handleReset() {
+      // this.optionsVisiable = true;
+      this.setPageModules(this.resetPageModules);
+      this.changeSelectedModules(this.resetSelectedModules);
+    },
     //保存
     handleSave() {
       this.setPageModules(this.pageModules);
+      this.changeSelectedModules(this.selectedModules);
     }
   },
   //生命周期函数
   created() {},
   beforeMount() {},
-  mounted() {},
+  mounted() {
+    this.$nextTick(function() {
+      //防止火狐浏览器拖拽的时候以新标签打开
+      document.body.ondrop = function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+      };
+    });
+  },
   //监听
   watch: {}
 };

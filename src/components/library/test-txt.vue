@@ -14,5 +14,6 @@ export default {
 .test-txt{
     text-align: center;
     padding: 20px;
+    width: 100%;
 }
 </style>

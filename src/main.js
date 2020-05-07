@@ -3,11 +3,32 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "@/assets/css/reset.css";
-import "./plugins/element.js";
+import {
+  Button,
+  Select,
+  Container,
+  Aside,
+  Main,
+  Footer,
+  Tabs,
+  TabPane,
+  Image,
+  Carousel,
+  CarouselItem,
+} from "element-ui";
 
-import VueAwesomeSwiper from "vue-awesome-swiper";
-import "swiper/dist/css/swiper.css";
-Vue.use(VueAwesomeSwiper);
+Vue.prototype.$ELEMENT = { size: "small" };
+Vue.use(Button);
+Vue.use(Select);
+Vue.use(Container);
+Vue.use(Aside);
+Vue.use(Main);
+Vue.use(Footer);
+Vue.use(Tabs);
+Vue.use(TabPane);
+Vue.use(Image);
+Vue.use(Carousel);
+Vue.use(CarouselItem);
 
 Vue.config.productionTip = false;
 

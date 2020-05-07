@@ -19,11 +19,11 @@
         class="clear"
       >
         <li v-for="(item, index) in componentsList" :key="index">
-          <!-- <el-image src="" fit="contain">
+          <el-image src="" fit="contain">
             <div slot="error" class="image-slot">
               <i class="el-icon-picture-outline"></i>
             </div>
-          </el-image>-->
+          </el-image>
           <p>{{ item.name }}</p>
         </li>
       </draggable>
@@ -32,43 +32,33 @@
 </template>
 <script>
 //import from ''
-import draggable from "vuedraggable";
+import Draggable from "vuedraggable";
 import Attribute from "@/assets/js/attribute.js";
 export default {
   name: "component-list",
   //实例的数据对象
   data() {
     return {
-      activeName: "basic"
+      activeName: "basic",
+      componentsList: Attribute.componentsList
     };
   },
   components: {
-    draggable
+    Draggable
   },
   //数组或对象，用于接收来自父组件的数据
   props: {},
   //计算
-  computed: {
-    componentsList() {
-      return Attribute.componentsList;
-    }
-  },
+  computed: {},
   //方法
   methods: {
     handleClick(tab, event) {
       console.log(tab, event);
     },
     cloneData(obj) {
-      // 克隆会改变数组内数据
-      let cloneItemData = { ...obj, ...Attribute.baseConfig };
-      let cloneType = this.componentsList.find(item => {
-        return item.type === obj.type;
-      });
-      cloneItemData.title = `此处配置${cloneType.name}标题`;
-      cloneItemData.images = [];
-      cloneItemData.list = [];
-      cloneItemData.productIds = [];
-      return cloneItemData;
+      const elKey =
+        obj.type + "_" + Date.now() + "_" + Math.ceil(Math.random() * 1000000);
+      return { ...obj, key: elKey };
     }
   },
   //生命周期函数
@@ -86,11 +76,8 @@ export default {
     width: 100%;
     li {
       float: left;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       width: 29.33%;
-      height: 50px;
+      height: 85px;
       border: 1px solid #e3e2e5;
       padding: 5px;
       margin: 10px 2%;
@@ -98,6 +85,10 @@ export default {
       text-align: center;
       background-color: #ffffff;
       cursor: move;
+      .el-image {
+        width: 80%;
+        height: 50px;
+      }
       &:hover {
         border-color: #2589ff;
       }

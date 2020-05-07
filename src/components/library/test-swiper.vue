@@ -1,32 +1,24 @@
 <template>
   <div class="test-swiper">
-    <common-title :item="item"></common-title>
     <el-carousel height="150px">
-      <el-carousel-item v-for="(slide, index) in item.list" :key="index">
-        <img ref="images" class="images" :src="slide.source" />
+      <el-carousel-item v-for="item in 4" :key="item">
+        <h3 class="small">{{ item }}</h3>
       </el-carousel-item>
     </el-carousel>
   </div>
 </template>
 <script>
 //import from ''
-import CommonTitle from "./commonTitle";
+
 export default {
-  name: "swiper",
+  name: "",
   //实例的数据对象
   data() {
     return {};
   },
-  components: {
-    CommonTitle
-  },
+  components: {},
   //数组或对象，用于接收来自父组件的数据
-  props: {
-    item: {
-      type: Object,
-      required: true
-    }
-  },
+  props: {},
   //计算
   computed: {},
   //方法
@@ -48,5 +40,13 @@ export default {
   opacity: 0.75;
   line-height: 150px;
   margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+  background-color: #d3dce6;
 }
 </style>

@@ -1,6 +1,9 @@
 <template>
   <div class="header">
     <p>demo练习</p>
+    <p>
+      
+    </p>
   </div>
 </template>
 <script>
@@ -32,11 +35,10 @@ export default {
 .header {
   position: relative;
   width: 100%;
-  height: 60px;
-  line-height: 60px;
+  height: 70px;
+  line-height: 70px;
   font-size: 22px;
   color: #fff;
-  text-align: center;
   box-sizing: border-box;
   background-color: #242f42;
 }

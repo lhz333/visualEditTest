@@ -1,9 +1,6 @@
 <template>
   <div class="header">
     <p>demo练习</p>
-    <p>
-      
-    </p>
   </div>
 </template>
 <script>

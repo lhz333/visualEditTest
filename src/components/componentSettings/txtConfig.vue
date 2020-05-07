@@ -1,13 +1,13 @@
 <template>
-  <div class="header">
-    <p>demo练习</p>
-  </div>
+  <el-card class="marginTop10" shadow="hover">
+    <p>text的配置属性</p>
+  </el-card>
 </template>
 <script>
 //import from ''
-
+import { mapGetters } from "vuex";
 export default {
-  name: "",
+  name: "textConfig",
   //实例的数据对象
   data() {
     return {};
@@ -16,7 +16,9 @@ export default {
   //数组或对象，用于接收来自父组件的数据
   props: {},
   //计算
-  computed: {},
+  computed: {
+    ...mapGetters(["selectedModules"])
+  },
   //方法
   methods: {},
   //生命周期函数
@@ -28,16 +30,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-.header {
-  position: relative;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  font-size: 22px;
-  color: #fff;
-  text-align: center;
-  box-sizing: border-box;
-  background-color: #242f42;
-}
-</style>
+<style lang="less" scoped></style>

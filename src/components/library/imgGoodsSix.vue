@@ -1,20 +1,27 @@
 <template>
-  <div class="header">
-    <p>demo练习</p>
+  <div class>
+    <common-title :item="item"></common-title>图片+商品（6个一组） 横向
   </div>
 </template>
 <script>
 //import from ''
-
+import CommonTitle from "./commonTitle";
 export default {
-  name: "",
+  name: "imgGoodsSix",
   //实例的数据对象
   data() {
     return {};
   },
-  components: {},
+  components: {
+    CommonTitle
+  },
   //数组或对象，用于接收来自父组件的数据
-  props: {},
+  props: {
+    item: {
+      type: Object,
+      required: true
+    }
+  },
   //计算
   computed: {},
   //方法
@@ -28,16 +35,4 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-.header {
-  position: relative;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  font-size: 22px;
-  color: #fff;
-  text-align: center;
-  box-sizing: border-box;
-  background-color: #242f42;
-}
-</style>
+<style lang="less" scoped></style>

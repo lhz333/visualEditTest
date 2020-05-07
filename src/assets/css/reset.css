@@ -184,6 +184,19 @@ input[type='number'] {
   padding: 20px;
 }
 
+.padding10 {
+  padding: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.fontSize12 {
+  font-size: 12px;
+}
+
+/* 拖拽 */
 .ghostClass {
   position: relative;
   line-height: 20px;
@@ -204,4 +217,37 @@ input[type='number'] {
   font-size: 16px;
   color: #999;
   z-index: 10;
+}
+
+/* input */
+body .el-input {
+  width: 160px !important;
+}
+
+body .el-form-item__label {
+  font-size: 12px;
+}
+
+/* 轮播按钮 */
+body .el-carousel__button{
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border: 1px solid #7a7c7f;
+  border-radius: 100%;
+  background: transparent;
+}
+body .el-carousel__indicator.is-active button {
+  background: #7a7c7f;
+}
+
+.swiper-pagination-bullet {
+  background: transparent !important;
+  opacity: 1 !important;
+  border: 1px solid #7a7c7f;
+  outline: none;
+}
+
+.swiper-pagination-bullet-active {
+  background: #7a7c7f !important;
 }
